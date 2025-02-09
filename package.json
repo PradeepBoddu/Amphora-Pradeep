@@ -1,0 +1,32 @@
+{
+  "name": "amphora-pradeep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run",
+    "generate-report": "node cucumber-html-report.js",
+    "test-with-report": "npm run test && npm run generate-report"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/e2e/StepDefinitions/*.js",
+    "json": {
+      "enabled": true,
+      "output": "cypress/reports/json/cucumber_report.json"
+    },
+    "filterSpecs": true,
+    "omitFiltered": true
+  },
+  "author": "Pradeep",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "cucumber": "^6.0.7",
+    "cucumber-html-reporter": "^7.2.0",
+    "cypress": "^14.0.2",
+    "cypress-xpath": "^2.0.1"
+  }
+}
