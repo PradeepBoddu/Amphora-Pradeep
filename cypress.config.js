@@ -6,6 +6,10 @@ const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esb
 module.exports = defineConfig({
   e2e: {
     specPattern: '**/*.feature',
+    screenshotsFolder: "cypress/screenshots",
+    videosFolder: "cypress/videos",
+    video: true,  // Enables video recording for test runs
+    screenshotOnRunFailure: true,  // Automatically take a screenshot on test failure
     env: {
       TAGS: 'not @ignore',
     },
